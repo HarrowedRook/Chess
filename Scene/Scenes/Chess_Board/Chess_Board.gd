@@ -7,6 +7,7 @@ const Tile_Scene = preload("res://Scene/Components/Base_Tile/Base_Tile.tscn")
 
 func _ready():
 	_generate_map()
+	
 
 func _generate_map():
 	for y in 8:

@@ -15,9 +15,9 @@ onready var PIECE = $Piece
 var myLocation
 
 func _ready():
-	Move_to_Tile(1,1)
-	
-
+	#Move_to_Tile(1,1)
+	#var temp = Location()
+	pass
 
 func _physics_process(delta):
 	
@@ -26,6 +26,7 @@ func _physics_process(delta):
 	#if Input.is_action_just_pressed("left_mouse") and selected:
 	#	CheckLegalMoves()
 		
+	#queryTile(1,1)
 	
 	
 	if moving:
@@ -38,14 +39,18 @@ func Move_to_Tile(x, y):
 	distance = position - destination
 	moving = true
 	
+	#print(Global.MAP_GRID.data_map)
+	Global.MAP_GRID.data_map[y][x] = [1,1]
+	
 func CheckSelected():
 	if (selected):
 		print("lol")
 	return selected
 	
-func MyLocation():
-	print("x" + String((position.x - 8)/16))
-	print("y" + String((position.y - 8)/16))
+func Location():
+	return Vector2(((position.x - 8)/16),((position.y - 8)/16))
+	#print("x" + String((position.x - 8)/16))
+	#print("y" + String((position.y - 8)/16))
 
 
 func _on_Area2D_mouse_entered():
@@ -54,3 +59,7 @@ func _on_Area2D_mouse_entered():
 
 func _on_Area2D_mouse_exited():
 	selected = false
+	
+func queryTile(x,y):
+	print(Global.MAP_GRID.data_map[y][x][0])
+	
