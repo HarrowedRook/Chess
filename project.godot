@@ -14,6 +14,10 @@ config/name="Chess"
 run/main_scene="res://Scene/Levels/Debug_Level/Debug_Level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scripts/Singletons/Global.gd"
+
 [display]
 
 window/size/width=320
