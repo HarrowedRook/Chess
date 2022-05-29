@@ -12,6 +12,8 @@ var selected = false
 
 onready var PIECE = $Piece
 
+var myLocation
+
 func _ready():
 	Move_to_Tile(1,1)
 	
@@ -21,17 +23,8 @@ func _physics_process(delta):
 	
 	
 	
-	if Input.is_action_just_pressed("left_mouse") and selected:
-		CheckLegalMoves()
-	
-	if Input.is_action_just_pressed("ui_accept"):
-		Move_to_Tile(0,7)
-		
-	if Input.is_action_just_pressed("ui_cancel"):
-		Move_to_Tile(2,2)
-		
-	if Input.is_action_just_pressed("ui_home"):
-		MyLocation()
+	#if Input.is_action_just_pressed("left_mouse") and selected:
+	#	CheckLegalMoves()
 		
 	
 	
@@ -45,8 +38,10 @@ func Move_to_Tile(x, y):
 	distance = position - destination
 	moving = true
 	
-func CheckLegalMoves():
-	print("lol")
+func CheckSelected():
+	if (selected):
+		print("lol")
+	return selected
 	
 func MyLocation():
 	print("x" + String((position.x - 8)/16))
