@@ -1,1 +1,1 @@
-"NEW!"
+"NEWman is a flogger!"
