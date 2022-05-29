@@ -1,1 +1,1 @@
-"Hello, new comment!"
+"NEW!"
